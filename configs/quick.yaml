@@ -1,0 +1,6 @@
+# Small settings for a fast smoke run (about a minute on a laptop CPU).
+data: synthetic
+synthetic_seed: 0
+split: {test_frac: 0.2, val_frac: 0.1}
+anfis: {n_rules: 40, lr: 0.015, epochs: 150, order: 1, patience: 30, horizon: 0, window: 30, seeds: [0, 1]}
+benchmark: {target: HR, n_lags: 14, window: 30, seed: 0}

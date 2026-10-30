@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+results/
+# never commit real data
+data/*
+!data/README.md

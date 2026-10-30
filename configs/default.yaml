@@ -1,0 +1,24 @@
+# Data: path to a CSV/Excel file with the columns listed in README, or
+# "synthetic" to use the generated stand-in series.
+data: synthetic
+synthetic_seed: 0
+
+split:
+  test_frac: 0.2     # last 20% of days
+  val_frac: 0.1      # 10% before the test block, used for early stopping
+
+anfis:
+  n_rules: 500       # values selected with a Taguchi design in the thesis
+  lr: 0.015
+  epochs: 500
+  order: 1           # first-order Takagi-Sugeno consequents
+  patience: 50
+  horizon: 0         # 0 = same-day indicators; >0 = indicators lead the target
+  window: 30         # time-series ANFIS: days of history
+  seeds: [0, 1, 2, 3, 4]
+
+benchmark:
+  target: HR
+  n_lags: 14
+  window: 30
+  seed: 0
